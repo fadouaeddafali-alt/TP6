@@ -17,6 +17,7 @@ try {
         PDO::ATTR_ERRMODE,
         PDO::ERRMODE_EXCEPTION
     );
+    echo "Connexion reussie à la base de donnes";
 
 } catch (PDOException $e) {
 
