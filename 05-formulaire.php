@@ -9,16 +9,19 @@ if (
     isset($_POST["produit"])
     && isset($_POST["prix"])
     && isset($_POST["quantite"])
+    && isset($_POST["categorie"])
 ) {
 
     $produit = $_POST["produit"];
     $prix = $_POST["prix"];
     $quantite = $_POST["quantite"];
+    $categorie= $_POST["categorie"];
 
     if (
         $produit != ""
         && $prix > 0
         && $quantite > 0
+        && $categorie != ""
     ) {
 
         $total = $prix * $quantite;
@@ -103,6 +106,11 @@ if (
             >
 
         </div>
+        <br>
+        <div>
+            <label for="categorie">Categorie:</label>
+            <input type="text" name="categorie" id="categorie">
+        </div>
 
         <br>
 
@@ -149,9 +157,10 @@ if (
         </p>
 
         <p>
-            Quantité :
-            <?php echo $quantite; ?>
+            categorie :
+            <?php echo $categorie; ?>
         </p>
+        
 
         <p>
             Total :
